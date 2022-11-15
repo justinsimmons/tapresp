@@ -102,7 +102,7 @@ func YourMiddleware(next http.Handler) http.Handler {
        // Provides an http.Response struct
        if err := Sign(trw.Response()); err != nil {
            trw.WriteHeader(http.StatusBadRequest)
-           trw.Writ([]byte("unable to sign HTTP response"))
+           trw.Write([]byte("unable to sign HTTP response"))
            return 
        }
     })
