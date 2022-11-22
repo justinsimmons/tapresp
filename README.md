@@ -32,7 +32,7 @@ func yourMiddleware(next http.Handler) http.Handler {
        // Wrap the old ResponseWriter
        trw := tapresp.New(w)
        
-       // Call necx handler in the chain
+       // Call next handler in the chain
        next.ServeHTTP(w, r)
        
        // Note this is a copy, any modification will not effect the original
@@ -48,7 +48,7 @@ func yourMiddleware(next http.Handler) http.Handler {
        // Wrap the old ResponseWriter
        trw := tapresp.New(w)
        
-       // Call necx handler in the chain
+       // Call next handler in the chain
        next.ServeHTTP(w, r)
        
        statusCode := trw.StatusCode()
@@ -68,7 +68,7 @@ func loggingMiddleware(next http.Handler) http.Handler {
        // Wrap the old ResponseWriter
        trw := tapresp.New(w)
        
-       // Call necx handler in the chain
+       // Call next handler in the chain
        next.ServeHTTP(w, r)
        
        // Log desired response info
@@ -96,7 +96,7 @@ func YourMiddleware(next http.Handler) http.Handler {
        // Wrap the old ResponseWriter
        trw := tapresp.New(w)
        
-       // Call necx handler in the chain
+       // Call next handler in the chain
        next.ServeHTTP(w, r)
        
        // Provides an http.Response struct
